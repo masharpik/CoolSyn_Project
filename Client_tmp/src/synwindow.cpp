@@ -14,11 +14,13 @@ void SynWindow::onInputButtonClicked()
 
     if (!Tester::testString(inputWord)) {
         QMessageBox::warning(this, "BAN", "Некорректный ввод");
+        this->mainPage->inputZone.inputText.clear();
     }
-
-    QVector<QString> syns = getSyns(inputWord);
-
-//    outputSyns(syns);
+    else {
+        QMessageBox::information(this, "Введенное слово", inputWord);
+        QVector<QString> syns = getSyns(inputWord);
+        outputSyns(syns);
+    }
 }
 
 void SynWindow::outputSyns(QVector<QString> syns) {
@@ -39,4 +41,3 @@ SynWindow::SynWindow(Widget *parent)
 SynWindow::~SynWindow()
 {
 }
-
