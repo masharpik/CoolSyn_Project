@@ -449,7 +449,7 @@
 		{
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
-			"path" : "src/syn_window.cpp",
+			"path" : "src/synwindow.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -460,7 +460,7 @@
 		},
 		{
 			"backtrace" : 4,
-			"path" : "include/syn_window.h",
+			"path" : "include/synwindow.h",
 			"sourceGroupIndex" : 1
 		},
 		{

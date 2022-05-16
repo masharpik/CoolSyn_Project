@@ -24,7 +24,7 @@ namespace GetSynsFunc {
     }
 
     bool clean_word(const std::string word, int& word_id) {
-        std::ifstream  file("..\\data\\word.csv");
+        std::ifstream  file("word.csv");
         CSVRow         row;
         while (file >> row) {
             if (row.getWord().empty()) {
@@ -41,7 +41,7 @@ namespace GetSynsFunc {
     void search_synonyms(std::vector<std::string>& synonyms,const int id) {
         int flag = 0;
         synonyms.clear();
-        std::ifstream  file("..\\data\\synonyms.csv");
+        std::ifstream  file("synonyms.csv");
         CSVRow         row;
         while (file >> row) {
             if (row.getId() == id) {
