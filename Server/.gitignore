@@ -52,4 +52,8 @@ Mkfile.old
 dkms.conf
 
 .DS_Store
-.idea/
+.idea
+build/**
+
+.vscode/**
+

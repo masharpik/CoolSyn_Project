@@ -6,7 +6,7 @@
 using namespace std;
 
 int main() {
-    cout << "Hello world!" << endl;
-    check_working();
+    Server serv;
+    // TODO(Masha): Дописать работу с объектом serv
     return 0;
 }
