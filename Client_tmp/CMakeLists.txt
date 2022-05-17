@@ -32,6 +32,7 @@ set(PROJECT_SOURCES
         src/tester.cpp
         include/getsynsfunc.h
         src/getsynsfunc.cpp
+        resourse/resourses.qrc
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

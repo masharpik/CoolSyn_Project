@@ -28,8 +28,5 @@ InputZone::InputZone(QWidget *parent) :
 //                  "#input {"
 //                  "height: 40px;}");
 //    mainLayout.setAlignment(Qt::AlignTop);
-    mainLayout.setSizeConstraint(QBoxLayout::SetFixedSize);
-
-
-
+//    mainLayout.setSizeConstraint(QBoxLayout::SetFixedSize);
 }

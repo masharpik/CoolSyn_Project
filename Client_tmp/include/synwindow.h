@@ -26,6 +26,7 @@ public:
     SynWindow(Widget *parent = nullptr);
     ~SynWindow();
     void outputSyns(QVector<QString> syns);
+    void clearOutputScroll(QString w);
 
 private:
     QStackedWidget pages;

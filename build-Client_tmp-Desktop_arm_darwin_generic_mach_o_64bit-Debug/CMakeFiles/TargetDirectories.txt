@@ -1,4 +1,0 @@
-/Users/anna/Downloads/Технопарк/CoolSyn_Project/build-Client_tmp-Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/Client_tmp.dir
-/Users/anna/Downloads/Технопарк/CoolSyn_Project/build-Client_tmp-Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/edit_cache.dir
-/Users/anna/Downloads/Технопарк/CoolSyn_Project/build-Client_tmp-Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/rebuild_cache.dir
-/Users/anna/Downloads/Технопарк/CoolSyn_Project/build-Client_tmp-Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/Client_tmp_autogen.dir

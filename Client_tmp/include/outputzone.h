@@ -11,6 +11,7 @@
 class OutputZone : public Widget
 {
     Q_OBJECT
+    friend class SynWindow;
 public:
     OutputZone(QWidget* parent = nullptr);
 
@@ -18,6 +19,6 @@ private:
     QVBoxLayout mainLayout;
     QLabel infoText;
     Widget *scrollWidget;
-    QVBoxLayout scrollLayout;
+    QVBoxLayout *scrollLayout;
     QScrollArea scrollSyn;
 };
