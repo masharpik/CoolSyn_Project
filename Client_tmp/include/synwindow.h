@@ -7,16 +7,17 @@
 #include <QWidget>
 #include <QTextEdit>
 #include <QStackedWidget>
+#include <QLabel>
 #include <QVBoxLayout>
 #include <QString>
 #include <QVector>
+#include <QMessageBox>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class syn_window; }
 QT_END_NAMESPACE
 
-class SynWindow : public Widget
-{
+class SynWindow : public Widget {
     Q_OBJECT
 
 public slots:
@@ -27,6 +28,7 @@ public:
     ~SynWindow();
     void outputSyns(QVector<QString> syns);
     void clearOutputScroll(QString w);
+    void createWindow();
 
 private:
     QStackedWidget pages;

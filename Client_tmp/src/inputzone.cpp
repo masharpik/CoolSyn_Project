@@ -1,6 +1,5 @@
 #include "inputzone.h"
-
-
+#include "helpwords.h"
 
 InputZone::InputZone(QWidget *parent) :
     Widget(parent),
@@ -8,25 +7,19 @@ InputZone::InputZone(QWidget *parent) :
     infoText("Введите текст:"),
     inputLineLayout(),
     inputText(),
-    inputButton("Найти")
+    inputButton("Найти"),
+    helpText(helpWords(),&inputText)
 {
     mainLayout.addWidget(&infoText);
 
-//    infoText.setObjectName("ourText");
-
     inputLineLayout.addWidget(&inputText);
+    helpText.setCaseSensitivity(Qt::CaseInsensitive);
+    helpText.setMaxVisibleItems(6);
+    inputText.setCompleter(&helpText);
     inputText.setObjectName("input");
     inputText.setMaximumHeight(30);
 
     inputLineLayout.addWidget(&inputButton);
 
     mainLayout.addLayout(&inputLineLayout);
-
-//    setStyleSheet("#ourText {"
-//                  "color:red;"
-//                  "}"
-//                  "#input {"
-//                  "height: 40px;}");
-//    mainLayout.setAlignment(Qt::AlignTop);
-//    mainLayout.setSizeConstraint(QBoxLayout::SetFixedSize);
 }

@@ -30,9 +30,13 @@ set(PROJECT_SOURCES
         src/mainpage.cpp
         include/tester.h
         src/tester.cpp
-        include/getsynsfunc.h
-        src/getsynsfunc.cpp
         resourse/resourses.qrc
+        include/levdistance.h
+        src/levdistance.cpp
+        include/similarwords.h
+        src/similarwords.cpp
+        include/helpwords.h
+        src/helpwords.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

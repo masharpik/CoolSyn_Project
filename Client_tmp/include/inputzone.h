@@ -7,6 +7,10 @@
 #include <QPushButton>
 #include <QLineEdit>
 #include <QGridLayout>
+#include <QCompleter>
+#include <QList>
+#include <QString>
+
 
 class InputZone : public Widget
 {
@@ -22,7 +26,7 @@ private:
         QLabel infoText;
         QHBoxLayout inputLineLayout;
             QLineEdit inputText;
+            QCompleter helpText;
+            QList<QString> listHelpWords;
             QPushButton inputButton;
-
-
 };
