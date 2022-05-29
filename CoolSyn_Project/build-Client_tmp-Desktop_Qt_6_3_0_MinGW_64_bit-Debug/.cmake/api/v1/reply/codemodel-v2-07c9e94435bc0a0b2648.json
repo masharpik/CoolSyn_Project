@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Client_tmp",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Client_tmp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Client_tmp-Debug-32ac182ad593486df67f.json",
+					"name" : "Client_tmp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Client_tmp_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Client_tmp_autogen-Debug-12b448dec968d9d26b4e.json",
+					"name" : "Client_tmp_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Client_tmp_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Client_tmp_autogen_timestamp_deps-Debug-528d31fccbb5c4e787b1.json",
+					"name" : "Client_tmp_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Klim/Desktop/new/CoolSyn_Project/build-Client_tmp-Desktop_Qt_6_3_0_MinGW_64_bit-Debug",
+		"source" : "C:/Users/Klim/Desktop/new/Client_tmp"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

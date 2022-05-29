@@ -14,7 +14,7 @@ InputZone::InputZone(QWidget *parent) :
 
     inputLineLayout.addWidget(&inputText);
     helpText.setCaseSensitivity(Qt::CaseInsensitive);
-    helpText.setMaxVisibleItems(6);
+    helpText.setMaxVisibleItems(4);
     inputText.setCompleter(&helpText);
     inputText.setObjectName("input");
     inputText.setMaximumHeight(30);
