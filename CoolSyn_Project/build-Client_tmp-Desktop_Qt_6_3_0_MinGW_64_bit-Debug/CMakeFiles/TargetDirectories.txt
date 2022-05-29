@@ -1,5 +1,0 @@
-C:/Users/Klim/Desktop/new/CoolSyn_Project/build-Client_tmp-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
-C:/Users/Klim/Desktop/new/CoolSyn_Project/build-Client_tmp-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/CMakeFiles/Client_tmp.dir
-C:/Users/Klim/Desktop/new/CoolSyn_Project/build-Client_tmp-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
-C:/Users/Klim/Desktop/new/CoolSyn_Project/build-Client_tmp-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/CMakeFiles/Client_tmp_autogen_timestamp_deps.dir
-C:/Users/Klim/Desktop/new/CoolSyn_Project/build-Client_tmp-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/CMakeFiles/Client_tmp_autogen.dir
