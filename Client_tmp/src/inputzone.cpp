@@ -5,7 +5,7 @@
 InputZone::InputZone(QWidget *parent) :
     Widget(parent),
     mainLayout(this),
-    infoText("Введите текст:"),
+    infoText("Введите слово:"),
     inputLineLayout(),
     inputText(),
     inputButton("Найти")

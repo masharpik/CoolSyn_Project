@@ -9,4 +9,6 @@ namespace GetSynsFunc
 {
 
     QVector<QString> getSyns(QString inputWord, SynWindow *window);
+    QString makeCorrectWord(QString str);
+    QString toCapitalize(QString word);
 };
