@@ -33,6 +33,12 @@ set(PROJECT_SOURCES
         include/getsynsfunc.h
         src/getsynsfunc.cpp
         resourse/resourses.qrc
+        include/levdistance.h
+        src/levdistance.cpp
+        include/similarwords.h
+        src/similarwords.cpp
+        include/helpwords.h
+        src/helpwords.cpp
         include/client.h
         src/client.cpp
 )
