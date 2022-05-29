@@ -23,7 +23,11 @@ namespace GetSynsFunc {
         while (!in.atEnd()) {
             // ... построчно
             QString line = in.readLine();
-            QVector<QString> dataForWord = line.split(",");
+            QVector<QString> dataForWord;
+            auto tmp = line.split(",");
+            for (auto &s: tmp) {
+                dataForWord.push_back(s);
+            }
             if (dataForWord[0] == inputWord) {
                 for (QString syn : dataForWord[1].split("|")) {
                     syns.push_back(syn);
@@ -40,7 +44,7 @@ namespace GetSynsFunc {
 
     QString toCapitalize(QString word) {
         QString result = "";
-        for (size_t i = 0; i < word.length(); ++i) {
+        for (uint i = 0; i < word.length(); ++i) {
             if (word[i] >= u'А' && word[i] <= u'Я' && i == 0) {
                 result += word[i];
             } else if (word[i] >= u'а' && word[i] <= u'я' && i == 0) {

@@ -22,4 +22,5 @@ public:
     int sendMessage(std::string word);
 
     Client(std::string ip="127.0.0.1", std::string="8080");
+    ~Client();
 };

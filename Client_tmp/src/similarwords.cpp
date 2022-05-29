@@ -14,7 +14,7 @@ namespace GetSimWords {
         QVector<QString> sim_words(MaxSimWords,inputWord);
         QVector<int> keys(MaxSimWords,inputWord.length());
 
-        QFile file(":/paraphrase_russian_a_u.csv");
+        QFile file(":/paraphrase.csv");
         if ( !file.open(QFile::ReadOnly | QFile::Text) ) {
             QMessageBox::warning(window, "BAN", "Ошибка связи с БД");
             return sim_words;
@@ -23,7 +23,11 @@ namespace GetSimWords {
         int numberofsims = 0;
         while (!in.atEnd()) {
             QString line = in.readLine();
-            QVector<QString> dataForWord = line.split(",");
+            QVector<QString> dataForWord;
+            auto tmp = line.split(",");
+            for (auto &s: tmp) {
+                dataForWord.push_back(s);
+            }
             int levdistanse = levenshteinDistance(inputWord.toLower(), dataForWord[0].toLower());
             if (!levdistanse) {
                 key = SYNONYM;
