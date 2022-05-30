@@ -1,7 +1,8 @@
 #include "levdistance.h"
+#include "helpwords.h"
 
 QList<QString> helpWords() {
-    QList<QString> helpwords;
+    QList<QString> words;
     QFile file(":/paraphrase.csv");
     if ( !file.open(QFile::ReadOnly | QFile::Text) ) {
         qInfo() <<  "Файл не открыт";
@@ -9,12 +10,7 @@ QList<QString> helpWords() {
     QTextStream in(&file);
     while (!in.atEnd()) {
         QString line = in.readLine();
-        QVector<QString> dataForWord;
-        auto tmp = line.split(",");
-        for (auto &s: tmp) {
-            dataForWord.push_back(s);
-        }
-        helpwords.append(dataForWord[0]);
+        words.append(line.split(",")[0]);
     }
-    return helpwords;
+    return words;
 }

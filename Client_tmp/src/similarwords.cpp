@@ -5,59 +5,44 @@
 #include <QMessageBox>
 #include <QTextStream>
 
-#define MaxSimWords 6
+const int MAXSIMWORDS = 6;
 
 namespace GetSimWords {
 
-    QVector<QString> getSims(QString inputWord, SynWindow *window, int& key) {
+    QVector<QString> getSims(QString inputWord, SynWindow *window) {
 
-        QVector<QString> sim_words(MaxSimWords,inputWord);
-        QVector<int> keys(MaxSimWords,inputWord.length());
+        QVector<QString> simWords(MAXSIMWORDS, inputWord);
+        QVector<int> keys(MAXSIMWORDS, inputWord.length());
 
         QFile file(":/paraphrase.csv");
         if ( !file.open(QFile::ReadOnly | QFile::Text) ) {
             QMessageBox::warning(window, "BAN", "Ошибка связи с БД");
-            return sim_words;
+            return simWords;
         }
         QTextStream in(&file);
-        int numberofsims = 0;
+        int numberOfSims = 0;
         while (!in.atEnd()) {
             QString line = in.readLine();
-            QVector<QString> dataForWord;
-            auto tmp = line.split(",");
-            for (auto &s: tmp) {
-                dataForWord.push_back(s);
-            }
+            QVector<QString> dataForWord = line.split(",");
             int levdistanse = levenshteinDistance(inputWord.toLower(), dataForWord[0].toLower());
-            if (!levdistanse) {
-                key = SYNONYM;
-                QVector<QString> syns = {};
-                for (QString syn : dataForWord[1].split("|")) {
-                    syns.push_back(syn);
-                }
-                return syns;
-            }
             if (levdistanse < inputWord.length()) {
-                if (numberofsims < MaxSimWords) {
-                    ++numberofsims;
+                if (numberOfSims < MAXSIMWORDS) {
+                    ++numberOfSims;
                 }
-                for (int i = 0; i < MaxSimWords; ++i) {
+                for (int i = 0; i < MAXSIMWORDS; ++i) {
                     if (levdistanse < keys[i]) {
-                        for (int j = numberofsims-1; j > i; --j) {
-                            keys[j] = keys[j-1];
-                            sim_words[j] = sim_words[j-1];
+                        for (int j = numberOfSims - 1; j > i; --j) {
+                            keys[j] = keys[j - 1];
+                            simWords[j] = simWords[j - 1];
                         }
                         keys[i] = levdistanse;
-                        sim_words[i] = dataForWord[0];
+                        simWords[i] = dataForWord[0];
                         break;
                     }
                 }
             }
         }
-        if (numberofsims) {
-            key = SIMILAR;
-        }
-        sim_words.resize(numberofsims);
-        return sim_words;
+        simWords.resize(numberOfSims);
+        return simWords;
     }
 }

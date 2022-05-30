@@ -20,7 +20,7 @@ int levenshteinDistance(const QString &source, const QString &target) {
         return levenshteinDistance(target, source);
     }
 
-    QVector<int> column;
+    QVector<int> column = {};
     column.fill(0, targetCount + 1);
     QVector<int> previousColumn;
     previousColumn.reserve(targetCount + 1);

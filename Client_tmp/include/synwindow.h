@@ -3,6 +3,7 @@
 #include "widget.h"
 #include "inputzone.h"
 #include "mainpage.h"
+#include "client.h"
 
 #include <QWidget>
 #include <QTextEdit>
@@ -12,10 +13,6 @@
 #include <QString>
 #include <QVector>
 #include <QMessageBox>
-
-QT_BEGIN_NAMESPACE
-namespace Ui { class syn_window; }
-QT_END_NAMESPACE
 
 class SynWindow : public Widget {
     Q_OBJECT
@@ -31,6 +28,9 @@ public:
     void createWindow();
 
 private:
+
+    QString toCapitalize(QString word);
+
     QStackedWidget pages;
     QVBoxLayout mainLayout;
     MainPage* mainPage;

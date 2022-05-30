@@ -8,7 +8,7 @@ InputZone::InputZone(QWidget *parent) :
     inputLineLayout(),
     inputText(),
     inputButton("Найти"),
-    helpText(helpWords(),&inputText)
+    helpText(helpWords(), &inputText)
 {
     mainLayout.addWidget(&infoText);
 

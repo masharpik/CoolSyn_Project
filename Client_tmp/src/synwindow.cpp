@@ -2,37 +2,51 @@
 #include "tester.h"
 #include "similarwords.h"
 #include "helpwords.h"
+#include "getsynsfunc.h"
 
 using namespace Tester;
 using namespace GetSimWords;
+using namespace GetSynsFunc;
 
 void SynWindow::onInputButtonClicked() {
 
     QString inputWord = this->mainPage->inputZone.inputText.text();
 
     clearOutputScroll(inputWord);
+
     if (!Tester::testString(inputWord)) {
         QMessageBox::warning(this, "BAN", "Некорректный ввод");
         this->mainPage->inputZone.inputText.clear();
         return;
     }
 
-    int key = 0;
-    QVector<QString> syns = getSims(inputWord, this, key);
-    if (key == SYNONYM) {
+//    Client *client = new Client(this);
+//    inputWord = this->toCa    pitalize(inputWord);
+    QVector<QString> syns;
+//    try {
+//        syns = client->getSyns(inputWord.toStdString());
+//        delete client;
+//    } catch (const std::string err) {
+        syns = getSyns(inputWord, this);
+//    }
+
+    if (syns.length() != 0) {
         this->mainPage->outputZone.infoText.setText("Синонимы слова '" + inputWord + "'");
+        outputSyns(syns);
+    } else {
+        QVector<QString> sims = getSims(inputWord, this);
+        if (sims.length() != 0) {
+            this->mainPage->outputZone.infoText.setText("Возможно, вы имели в виду");
+            outputSyns(sims);
+        } else {
+            this->mainPage->outputZone.infoText.setText("Не удалось найти синонимы");
+        }
     }
-    if (key == SIMILAR) {
-        this->mainPage->outputZone.infoText.setText("Возможно, вы имели в виду");
-    }
-    outputSyns(syns);
     return;
 }
 
 void SynWindow::outputSyns(QVector<QString> syns) {
     if (syns.length() == 0) {
-        QLabel *syn = new QLabel("Нет данных :(");
-        this->mainPage->outputZone.scrollLayout->addWidget(syn);
         return;
     }
     for (int i = 0; i < syns.length(); ++i) {
@@ -56,15 +70,31 @@ void SynWindow::clearOutputScroll(QString w) {
    }
 }
 
+QString SynWindow::toCapitalize(QString word) {
+    QString result = "";
+    for (uint i = 0; i < word.length(); ++i) {
+        if (word[i] >= u'А' && word[i] <= u'Я' && i == 0) {
+            result += word[i];
+        } else if (word[i] >= u'а' && word[i] <= u'я' && i == 0) {
+            result += word[i].toUpper();
+        } else if (word[i] >= u'А' && word[i] <= u'Я') {
+            result += word[i].toLower();
+        } else {
+            result += word[i];
+        }
+    }
+    return result;
+}
+
 void SynWindow::createWindow() {
     connect(&this->mainPage->inputZone.inputButton, &QPushButton::clicked, this, &SynWindow::onInputButtonClicked);
     //connect(&this->mainPage->inputZone.inputText, &QLineEdit::returnPressed, this, &SynWindow::onInputButtonClicked);
 
     //Main window
     mainPage->setMaximumHeight(601);
-    mainPage->setMaximumWidth(400);
+    mainPage->setMaximumWidth(900);
     mainPage->setMinimumHeight(300);
-    mainPage->setMinimumWidth(285);
+    mainPage->setMinimumWidth(400);
 
     this->mainPage->inputZone.infoText.setObjectName("infoTextInputZone");
     this->mainPage->inputZone.inputButton.setObjectName("clickButton");

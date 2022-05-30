@@ -8,13 +8,15 @@
 namespace GetSynsFunc {
 
     QVector<QString> getSyns(QString inputWord, SynWindow *window) {
+
         inputWord = makeCorrectWord(inputWord);
-        QVector<QString> syns;
+
+        QVector<QString> syns = {};
+
         // Открываем файл из ресурсов
         QFile file(":/paraphrase.csv");
         if ( !file.open(QFile::ReadOnly | QFile::Text) ) {
             QMessageBox::warning(window, "BAN", "Ошибка связи с БД");
-            syns = {};
             return syns;
         }
         // Создаём поток для извлечения данных из файла
@@ -23,13 +25,9 @@ namespace GetSynsFunc {
         while (!in.atEnd()) {
             // ... построчно
             QString line = in.readLine();
-            QVector<QString> dataForWord;
-            auto tmp = line.split(",");
-            for (auto &s: tmp) {
-                dataForWord.push_back(s);
-            }
+            QVector<QString> dataForWord = line.split(",");
             if (dataForWord[0] == inputWord) {
-                for (QString syn : dataForWord[1].split("|")) {
+                for (QString &syn : dataForWord[1].split("|")) {
                     syns.push_back(syn);
                 }
             }
