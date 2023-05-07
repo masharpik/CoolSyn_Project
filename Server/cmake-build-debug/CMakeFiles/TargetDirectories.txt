@@ -1,0 +1,4 @@
+/Users/anna/Downloads/Технопарк/CoolSyn_Project/Server/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/anna/Downloads/Технопарк/CoolSyn_Project/Server/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/anna/Downloads/Технопарк/CoolSyn_Project/Server/cmake-build-debug/CMakeFiles/server.out.dir
+/Users/anna/Downloads/Технопарк/CoolSyn_Project/Server/cmake-build-debug/CMakeFiles/lib.dir
